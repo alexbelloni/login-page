@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="login">
+        <section class="container">
+            <div class="header">
+                <div class="logo"></div>
+                <p>Dashboard Kit</p>
+            </div>
+            <span class="title">Log In to Dashboard Kit</span>
+            <span class="subtitle">Enter your email and password below</span>
+            <article class="field">
+                <div class="label">
+                    <label>EMAIL</label>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Email address" />
+                </div>
+            </article>
+            <article class="field">
+                <div class="label">
+                    <label>Password</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div class="input">
+                    <input class="password" type="password" placeholder="Password" />
+                    <img id="eye-icon" src="./eye-close.png" />
+                </div>
+
+            </article>
+            <div class="button">
+                <span>Log In</span>
+            </div>
+            <div class="footer">
+                <span>Don't have an account?</span>
+                <a href="#">Sign up</a>
+            </div>
+        </section>
+    </main>
+    <script>
+        window.onload = () => {
+            const eyeIcon = document.querySelector("#eye-icon");
+            eyeIcon.addEventListener("click", e => {
+                const isOpen = Array.from(eyeIcon.classList).includes('open');
+                eyeIcon.src = isOpen ? './eye-open.png' : './eye-close.png';
+                document.querySelector(".password").type = isOpen ? 'text' : 'password';
+                eyeIcon.classList.toggle('open');
+            })
+        }
+    </script>
+</body>
+
+</html>
